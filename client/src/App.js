@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-
+//creates apollo client to work with jsonwebtoken and validate
 const client = new ApolloClient({
   request: operation => {
     const token = localStorage.getItem('id_token');

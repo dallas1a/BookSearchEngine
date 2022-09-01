@@ -16,8 +16,7 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-  // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
-  // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
+  //uses SAVE_BOOK mutation to save a books array
 
   const [saveBook, { error }] = useMutation(SAVE_BOOK);
   
@@ -80,7 +79,7 @@ const SearchBooks = () => {
       console.error(err);
     }
   };
-
+//returns a search for books and the ability to save based on the given books parameters 
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>

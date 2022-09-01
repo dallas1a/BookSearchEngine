@@ -17,7 +17,7 @@ const SavedBooks = () => {
 
 
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
+ //handles book deleting from a saved array if token is validated from login
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -29,7 +29,7 @@ const SavedBooks = () => {
       await removeBook({
         variables: { bookId },
       });
-      // upon success, remove book's id from localStorage
+     
       removeBookId(bookId);
       window.location.reload();
     } catch (err) {
@@ -42,7 +42,7 @@ const SavedBooks = () => {
   }
   
 
-
+//returns display for saved books using info from local storage
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
